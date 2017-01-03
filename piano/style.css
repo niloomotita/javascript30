@@ -1,0 +1,46 @@
+html{
+    background-image: url("img/apple.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.keys{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25%;
+    
+}
+.key{
+    background-color: rgba(0, 0, 0, 0.42);;
+    color: white;
+    padding: 2%;
+    margin:1%;
+    text-align: center;
+    border: 4px solid black;
+    border-radius: 10%;
+    width:4%;
+    height:8%;
+    transition: all .09s;
+    
+}
+.sound{
+    display: block;
+    text-transform:uppercase;
+    font-size: 1rem;
+    color:yellow;
+}
+kbd{
+    font-size: 2rem;
+    display: block;
+}
+.playing{
+    transform: scale(1.1);
+    border-color:yellow;
+    box-shadow: 0 0 10px yellow; 
+}
+
+
+
+

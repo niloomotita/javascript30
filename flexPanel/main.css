@@ -1,0 +1,93 @@
+html{
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 30px;
+    font-style: normal;
+    color:white; 
+    font-weight: bold;
+    margin: 0;
+    box-shadow: border-box;
+   
+}
+body{
+    margin: 0;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+.panels{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.panel{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 
+       font-size 0.7s  cubic-bezier(0.6, -0.28, 0.735, 0.045),
+       flex 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+       background 0.2s;
+}
+
+.panel > * {
+    margin: 0;
+    width: 100%;
+    flex: 1 0 auto;
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.panel > *:first-child { transform: translateY(-100%);}
+.panel.open-active > *:first-child { transform: translateY(0);}
+.panel > *:last-child { transform: translateY(100%);}
+.panel.open-active > *:last-child { transform: translateY(0);}
+
+.panel p{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+}
+
+.panel.open{
+    flex: 5;
+    font-size: 50px;
+    font-style: italic;
+}
+.panel1{
+    background-image: url(img/panel1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel2{
+    background-image: url(img/panel2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel3{
+    background-image: url(img/panel3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel4{
+    background-image: url(img/panel4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.panel5{
+    background-image: url(img/panel5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

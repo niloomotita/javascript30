@@ -1,0 +1,46 @@
+html{
+    background-image: url('sea.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock{
+    width: 30em;
+    height:30em;
+    border: 15px solid black;
+    border-radius: 50%;
+    position: relative;
+    padding:.5em;
+    
+    
+}
+.hand{
+    width: 48%;
+    height: 8px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    border: 1px solid transparent;
+    border-radius: 3px 20px 20px 3px;
+    transform-origin: 100%;
+    transform:rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0, 1.68, 0, 1.64);
+}
+#sec{
+    background-color: red;
+    z-index: 1000;
+}
+#hour{
+   
+    width: 45%;
+    margin-left: 12px;
+}
+.notransition{
+    transition:none !important; 
+}

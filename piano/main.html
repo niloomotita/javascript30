@@ -1,0 +1,52 @@
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key">
+            <kbd> A </kbd>
+            <span class="sound">a1</span>
+        </div>
+        <div data-key="75" class="key">
+            <kbd> K </kbd>
+            <span class="sound">a4</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd> L </kbd>
+            <span class="sound">c5</span>
+        </div>
+        <div  data-key="83"class="key">
+            <kbd> S </kbd>
+            <span class="sound">f4</span>
+        </div>
+        <div data-key="77" class="key">
+            <kbd> M </kbd>
+            <span class="sound">g3</span>
+        </div>
+    </div>
+    <audio data-key="65"  src="sounds/a1.wav"></audio>
+    <audio data-key="75" src="sounds/a4.wav"></audio>
+    <audio data-key="76"  src="sounds/c5.mp3"></audio>
+    <audio data-key="83" src="sounds/f4.mp3"></audio>
+    <audio data-key="77" src="sounds/g3.mp3"></audio>
+<script>
+    
+    function playPiano(e){
+    const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+    const key = document.querySelector(`.key[data-key='${e.keyCode}']`);
+    if(!audio) return; // when there is no corresponding key stop the function
+    audio.currentTime = 0; // rewind to start
+    audio.play();
+    key.classList.add('playing');
+    }
+   function removeTransition(e){
+       if(e.propertyName !== 'transform') return; // stop it if not transform
+       this.classList.remove('playing');
+   }
+   
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+    window.addEventListener('keydown', playPiano);
+</script>
+    
+</body>

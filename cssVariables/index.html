@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2> New tricks with css, updating its variables with <span class="hl"> JS </span></h2>
+    <div class="controling">
+        <label for="spacing"> Spacing: </label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px"></input>
+        <label for="blur"> Blur: </label>
+        <input type="range" name="blur" min="0" max="25" value="2" data-sizing="px"></input>
+        <label for="base"> Color: </label>
+        <input type="color" name="base"  value="#ffc600"></input>
+    </div>
+    <div class="porvoo">
+        <img src="img/porvoo.jpg" alt="">
+    </div>
+    <script>
+        const inputs = document.querySelectorAll('.controling input');
+        function handleChange(){
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+        inputs.forEach(input => input.addEventListener('change', handleChange));
+         inputs.forEach(input => input.addEventListener('mousemove', handleChange));
+    </script>
+</body>
