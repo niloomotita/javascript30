@@ -1,0 +1,59 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+</head>
+<body>
+    <div class='card'>    
+        <div class="item">
+            <input type="checkbox">
+            <p class="strikethrough">Wake up!</p>
+        </div>
+        <div class="item">
+             <input type="checkbox">
+             <p class="strikethrough">Get out of the bed</p>
+        </div>
+        <div class="item">
+             <input type="checkbox">
+             <p class="strikethrough">Make a decent cup of latte</p>
+        </div>
+        <div class="item">
+             <input type="checkbox">
+             <p class="strikethrough">About an hour latte routine</p>
+        </div>
+        <div class="item">
+             <input type="checkbox">
+             <p class="strikethrough">Read some real literature</p>
+        </div>
+        <div class="item">
+             <input type="checkbox">
+             <p class="strikethrough"> Start your day</p>
+        </div>
+    </div>
+    <script>
+
+       let lastChecked;
+       function handleCheck(e){
+           let inBetween = false;
+           //shiftkey and checked
+           if(e.shiftKey && this.checked){
+               //loop over every checkbox
+               checkboxes.forEach(checkbox =>{
+                   if(checkbox === this || checkbox === lastChecked){
+                       inBetween = !inBetween;
+                   }
+                   if(inBetween){
+                       checkbox.checked = true;
+                   }
+               });
+           }
+
+       
+
+           lastChecked = this;
+       }
+       
+       const checkboxes = document.querySelectorAll('.card input[type ="checkbox"]');
+       checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+       
+    </script>
+</body>

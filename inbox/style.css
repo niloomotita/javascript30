@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(0, 230, 172);
+    margin:0;
+    display: flex;
+    align-items: center;
+   
+}
+.card{
+    background-color: rgb(255, 153, 153);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 12px 12px 7px rgb(138, 97, 97);
+    
+}
+.item{
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+input{
+    padding: 10px;
+    margin: 20px;
+    
+}
+p{
+   margin: 0;
+   border-left: 1px solid white;
+   padding: 20px; 
+   font-family: 'Caveat', cursive;
+   font-size: 4vw;
+   color: white;
+   text-shadow: 4px 4px 2px rgba(197, 66, 66,1);
+   width:100%;
+   transition: background 1.01s;
+ 
+}
+input:checked + p.strikethrough{
+  text-decoration: line-through;
+  background-color: #f57b7b;
+  
+}
